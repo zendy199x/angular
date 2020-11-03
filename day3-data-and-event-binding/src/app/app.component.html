@@ -1,0 +1,20 @@
+<hello name="{{ name }}"></hello>
+
+<!-- {{ expression - string interpolation }} -->
+<p>{{ user.name }}</p>
+<p>{{ user.age }}</p>
+
+<!-- <input type="{{ inputType }}" value="vaasd" /> -->
+<!-- <input [type]="'text'" value="vaasd" /> -->
+<!-- <input [type]="inputType" [value]="user.name" /> -->
+<input type="text" [value]="user.name" />
+<button type="button" (click)="handler($event)">Click Me !!!</button>
+
+<br /><br />
+<!-- Two ways data binding -->
+<!-- <input type="text" [(ngModel)]="name" /> -->
+<input
+	type="text"
+	[ngModel]="name"
+	(ngModelChange)="name = $event"
+/>
