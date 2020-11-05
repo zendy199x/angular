@@ -1,0 +1,63 @@
+<button (click)="isDanger = !isDanger">Toggle Danger</button>
+<br />
+<button (click)="isWarning = !isWarning">Toggle Warning</button>
+
+<!-- <div class="box red-border yellow-background"></div> -->
+
+
+<!-- Class Binding -->
+
+<!-- [class.name-class] -->
+<div
+  class="box"
+  [class.red-border]="isDanger"
+  [class.yellow-background]="isWarning"
+>
+  [class.name-class]
+</div>
+
+<!-- [class] = "array" -->
+<div class="box" [class]="['red-border', 'yellow-background']">
+  [class] = "array"
+</div>
+
+<!-- [class] = "object" { [name-class: string]: boolean } -->
+
+<div
+  class="box"
+  [class]="{ 'red-border': isDanger, 'yellow-background': isWarning }"
+>
+  [class] = "object"
+</div>
+
+<!-- [class] = "variable" -->
+<div [class]="classes">[class] = "variable"</div>
+
+<!-- Style Binding -->
+
+<p style="color: red">Style Binding</p>
+
+<!--
+[style.name-style]
+[style.nameStyle]
+[style.nameStyle.unit]
+-->
+<p
+  [style.color]="'red'"
+  [style.backgroundColor]="'yellow'"
+  [style.fontSize.rem]="2"
+>
+  [style.name-style] [style.nameStyle] [style.nameStyle.unit]
+</p>
+
+<!-- [style]="object" -->
+<p
+  [style.--text-color]="isDanger ? 'red' : 'blue'"
+  [style]="{
+    color: 'var(--text-color)',
+    backgroundColor: 'yellow',
+    fontSize: '2rem'
+  }"
+>
+  [style]="object"
+</p>
