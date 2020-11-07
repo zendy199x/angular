@@ -1,0 +1,25 @@
+<hello name="{{ name }}"></hello>
+<p>Start editing to see some magic happen :)</p>
+
+<input
+  #nameInput
+  type="text"
+  [ngModel]="name"
+  (ngModelChange)="name = $event"
+/>
+<!-- <input type="text" [(ngModel)]="name" /> -->
+<br /><br />
+<!-- toggleComp là instance của ToggleComponent -->
+<!-- <app-toggle #toggleComp [(checked)]="isChecked"></app-toggle> -->
+
+<button (click)="showLast = !showLast">Toggle show last</button>
+
+<app-toggle [(checked)]="isChecked"></app-toggle>
+<app-toggle [(checked)]="isChecked"></app-toggle>
+<app-toggle [(checked)]="isChecked"></app-toggle>
+<ng-container *ngIf="showLast">
+  <app-toggle [(checked)]="isChecked"></app-toggle>
+</ng-container>
+<!-- <br />
+<button (click)="toggleComp.toggle()">Toggle me</button> -->
+<button #toggleButton>Toggle me</button> -->
