@@ -1,0 +1,41 @@
+<hello name="{{ name }}"></hello>
+<p>Start editing to see some magic happen :)</p>
+
+<p>{{ currentDate | date }}</p>
+<p>{{ currentDate | date: "shortDate" }}</p>
+<p>{{ currentDate | date: "mediumDate" }}</p>
+<p>{{ currentDate | date: "fullDate" }}</p>
+<p>{{ currentDate | date: "dd/MM/yyyy" }}</p>
+
+<p>{{ "Zendy" | lowercase }}</p>
+<p>{{ "Zendy" | uppercase }}</p>
+
+<p>{{ 250 | currency }}</p>
+<p>{{ 250000 | currency: "VND" }}</p>
+
+<p>{{ 2.432323432 | number: "1.1-4" }}</p>
+<p>{{ 0.57 | percent }}</p>
+
+<p>{{ currentDate | json }}</p>
+<p>{{ user | json }}</p>
+
+<!-- <p>{{ interval$ | async }}</p> -->
+
+<p>
+  {{ formatAddress(addr) }}
+</p>
+<p>
+  {{ addr | formatAddressPipe: "para1" }}
+</p>
+
+Full user list:
+<ul>
+  <li *ngFor="let user of users">{{ user.name }} - {{ user.age }}</li>
+</ul>
+
+Adult user list:
+<ul>
+  <li *ngFor="let user of users | adult">{{ user.name }} - {{ user.age }}</li>
+</ul>
+
+<button (click)="addUser()">Add User</button>
